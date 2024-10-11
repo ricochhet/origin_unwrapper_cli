@@ -26,19 +26,19 @@ syso:
 	windres origin-unwrapper-cli.rc -O coff -o origin-unwrapper-cli.syso
 
 origin-unwrapper-linux:
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GO_BUILD) -o origin-unwrapper-linux
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GO_BUILD) -o origin-unwrapper-linux ./cmd/origin_unwrapper_cli
 
 origin-unwrapper-linux-arm:
-	CGO_ENABLED=0 GOOS=linux GOARCH=arm64 $(GO_BUILD) -o origin-unwrapper-linux-arm
+	CGO_ENABLED=0 GOOS=linux GOARCH=arm64 $(GO_BUILD) -o origin-unwrapper-linux-arm ./cmd/origin_unwrapper_cli
 
 origin-unwrapper-darwin:
-	CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 $(GO_BUILD) -o origin-unwrapper-darwin
+	CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 $(GO_BUILD) -o origin-unwrapper-darwin ./cmd/origin_unwrapper_cli
 
 origin-unwrapper-darwin-arm:
-	CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 $(GO_BUILD) -o origin-unwrapper-darwin-arm
+	CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 $(GO_BUILD) -o origin-unwrapper-darwin-arm ./cmd/origin_unwrapper_cli
 
 origin-unwrapper-windows:
-	CGO_ENABLED=0 GOOS=windows GOARCH=amd64 $(GO_BUILD) -o origin-unwrapper-windows.exe
+	CGO_ENABLED=0 GOOS=windows GOARCH=amd64 $(GO_BUILD) -o origin-unwrapper-windows.exe ./cmd/origin_unwrapper_cli
 
 clean:
 	rm -f origin-unwrapper-linux origin-unwrapper-linux-arm origin-unwrapper-darwin origin-unwrapper-darwin-arm origin-unwrapper-windows.exe
